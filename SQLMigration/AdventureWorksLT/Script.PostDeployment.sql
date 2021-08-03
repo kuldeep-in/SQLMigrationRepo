@@ -9,3 +9,12 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
+
+:r .\Scripts\internal.DBVersion.sql
+
+IF NOT EXISTS (SELECT 1 FROM SalesLT.Customer)
+BEGIN
+    :r .\Scripts\SalesLT.Customer.sql
+    :r .\Scripts\SalesLT.Address.sql
+    :r .\Scripts\SalesLT.CustomerAddress.sql
+END

@@ -14,6 +14,10 @@
     [PasswordSalt] VARCHAR (10)      NOT NULL,
     [rowguid]      UNIQUEIDENTIFIER  CONSTRAINT [DF_Customer_rowguid] DEFAULT (newid()) NOT NULL,
     [ModifiedDate] DATETIME          CONSTRAINT [DF_Customer_ModifiedDate] DEFAULT (getdate()) NOT NULL,
+
+    -- #MigrationChange 02
+    [OfficeAddress] VARCHAR(512) NOT NULL,
+
     CONSTRAINT [PK_Customer_CustomerID] PRIMARY KEY CLUSTERED ([CustomerID] ASC),
     CONSTRAINT [AK_Customer_rowguid] UNIQUE NONCLUSTERED ([rowguid] ASC)
 );

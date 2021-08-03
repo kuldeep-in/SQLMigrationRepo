@@ -105,6 +105,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\internal.DBVersion.sql" />
+    <None Include="Scripts\SalesLT.ProductDescription.sql" />
+    <None Include="Scripts\SalesLT.Address.sql" />
+    <None Include="Scripts\SalesLT.Customer.sql" />
+    <None Include="Scripts\SalesLT.CustomerAddress.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.sql" />
